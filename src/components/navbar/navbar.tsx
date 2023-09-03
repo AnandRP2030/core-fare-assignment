@@ -72,7 +72,7 @@ export function Navbar() {
       <div className=" my-2 my-lg-0">
         <a className="navbar-brand" href="#">
           <img
-            src="http://corefares.com/wp-content/uploads/2021/08/coreFares-logo-web-new.png"
+            src="https://cdn.pixabay.com/photo/2016/11/22/11/48/mountain-1849091_1280.png"
             alt="logo"
             className="logo"
           />
