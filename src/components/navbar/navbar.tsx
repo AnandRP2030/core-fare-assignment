@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 export function Navbar() {
+  const [activeLink, setActiveLink] = useState("Home");
+
+  const handleClick = (link: string) => {
+    setActiveLink(link);
+  };
+
+  console.log("a", activeLink);
   return (
     <nav className="navbar navbar-expand-lg navbar-light  nav-style   ">
       <button
@@ -13,27 +22,50 @@ export function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-     
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
+        <ul className="navbar-nav mr-auto ">
+          <li className={`nav-item ${activeLink === "Home" && "active"}`}>
+            <a
+              className="nav-link"
+              href="#"
+              onClick={() => {
+                handleClick("Home");
+              }}
+            >
               Home
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="http://corefares.com/?page_id=15">
+          <li className={`nav-item ${activeLink === "Services" && "active"}`}>
+            <a
+              className="nav-link"
+              href="http://corefares.com/?page_id=15"
+              onClick={() => {
+                handleClick("Services");
+              }}
+            >
               Services
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
+          <li className={`nav-item ${activeLink === "About" && "active"}`}>
+            <a
+              className="nav-link"
+              href="http://corefares.com/?page_id=13"
+              onClick={() => {
+                handleClick("About");
+              }}
+            >
               About
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Footer
+          <li className={`nav-item ${activeLink === "Contact" && "active"}`}>
+            <a
+              className="nav-link"
+              href="#contact"
+              onClick={() => {
+                handleClick("Contact");
+              }}
+            >
+              Contact
             </a>
           </li>
         </ul>
