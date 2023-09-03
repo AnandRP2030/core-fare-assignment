@@ -7,7 +7,6 @@ export function Navbar() {
     setActiveLink(link);
   };
 
-  console.log("a", activeLink);
   return (
     <nav className="navbar navbar-expand-lg navbar-light  nav-style   ">
       <button
